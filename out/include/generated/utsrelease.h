@@ -1,1 +1,0 @@
-#define UTS_RELEASE "4.19.325-g4b39e6ced6d2-dirty"
