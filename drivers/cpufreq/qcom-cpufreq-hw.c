@@ -157,7 +157,7 @@ qcom_cpufreq_hw_target_index(struct cpufreq_policy *policy,
 			     unsigned int index)
 {
 	struct cpufreq_qcom *c = policy->driver_data;
-	unsigned long flags;
+	unsigned long __maybe_unused flags;
 
 		writel_relaxed(index, c->reg_bases[REG_PERF_STATE]);
 
@@ -596,7 +596,7 @@ static int cpufreq_hw_set_cur_state(struct thermal_cooling_device *cdev,
 static int cpufreq_hw_get_cur_state(struct thermal_cooling_device *cdev,
 					unsigned long *state)
 {
-	struct cpufreq_cooling_cdev *cpu_cdev = cdev->devdata;
+	struct cpufreq_cooling_cdev *__maybe_unused cpu_cdev = cdev->devdata;
 
 	*state = CPUFREQ_HW_LOW_TEMP_LEVEL;
 
